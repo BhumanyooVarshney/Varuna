@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:background="#FFFFFF"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.example.kampaani.WaterPlants">
+
+
+    <android.support.design.widget.FloatingActionButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        app:fabSize="mini"
+        android:src="@drawable/power"
+        android:layout_marginRight="20dp"
+        android:layout_marginEnd="20dp"
+        app:backgroundTint="@color/fab"
+        android:layout_marginBottom="25dp"
+        android:id="@+id/waterlog"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <android.support.design.widget.FloatingActionButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        app:fabSize="mini"
+        app:backgroundTint="@color/fab"
+        android:src="@drawable/home1"
+        android:id="@+id/waterhome"
+        android:layout_marginLeft="22dp"
+        android:layout_marginStart="22dp"
+        android:layout_alignTop="@+id/waterlog"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:text="WATER THE PLANT"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="35dp"
+        android:textStyle="bold"
+        android:id="@+id/textView4"
+        android:textAlignment="center"
+        android:layout_alignParentTop="true"
+        android:layout_alignRight="@+id/waterlog"
+        android:layout_alignEnd="@+id/waterlog"
+        android:layout_marginTop="45dp" />
+
+    <TextView
+        android:id="@+id/wat_text1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/textView4"
+        android:layout_alignStart="@+id/textView4"
+        android:layout_below="@+id/textView4"
+        android:layout_marginLeft="17dp"
+        android:layout_marginStart="17dp"
+        android:layout_marginTop="52dp" />
+
+    <TextView
+        android:id="@+id/wat_text2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:layout_alignBaseline="@+id/water2"
+        android:layout_alignBottom="@+id/water2"
+        android:layout_alignLeft="@+id/wat_text3"
+        android:layout_alignStart="@+id/wat_text3" />
+
+    <TextView
+        android:id="@+id/wat_text3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/water3"
+        android:layout_alignBottom="@+id/water3"
+        android:layout_alignLeft="@+id/wat_text4"
+        android:layout_alignStart="@+id/wat_text4" />
+
+    <TextView
+        android:id="@+id/wat_text4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/water4"
+        android:layout_alignBottom="@+id/water4"
+        android:layout_alignLeft="@+id/wat_text5"
+        android:layout_alignStart="@+id/wat_text5" />
+
+    <TextView
+        android:id="@+id/wat_text5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/water5"
+        android:layout_alignBottom="@+id/water5"
+        android:layout_alignLeft="@+id/wat_text1"
+        android:layout_alignStart="@+id/wat_text1" />
+
+    <Button
+        android:id="@+id/water1"
+        android:layout_width="80dp"
+        android:layout_height="40dp"
+        android:layout_alignTop="@+id/wat_text1"
+        android:layout_toLeftOf="@+id/waterlog"
+        android:layout_toStartOf="@+id/waterlog"
+        android:text="WATER ME"
+        android:visibility="invisible" />
+
+    <Button
+        android:id="@+id/water2"
+        android:layout_width="80dp"
+        android:layout_height="40dp"
+        android:layout_above="@+id/water3"
+        android:layout_alignLeft="@+id/water1"
+        android:layout_alignStart="@+id/water1"
+        android:layout_marginBottom="14dp"
+        android:text="WATER"
+        android:visibility="invisible" />
+
+    <Button
+        android:id="@+id/water3"
+        android:layout_width="80dp"
+        android:layout_height="40dp"
+        android:layout_alignLeft="@+id/water2"
+        android:layout_alignStart="@+id/water2"
+        android:layout_centerVertical="true"
+        android:text="WATER"
+        android:visibility="invisible" />
+
+    <Button
+        android:id="@+id/water4"
+        android:layout_width="80dp"
+        android:layout_height="40dp"
+        android:layout_alignLeft="@+id/water3"
+        android:layout_alignStart="@+id/water3"
+        android:layout_below="@+id/water3"
+        android:layout_marginTop="16dp"
+        android:text="WATER"
+        android:visibility="invisible" />
+
+    <Button
+        android:id="@+id/water5"
+        android:layout_width="80dp"
+        android:layout_height="40dp"
+        android:layout_alignLeft="@+id/water4"
+        android:layout_alignStart="@+id/water4"
+        android:layout_below="@+id/water4"
+        android:layout_marginTop="16dp"
+        android:text="WATER"
+        android:visibility="invisible" />
+</RelativeLayout>
