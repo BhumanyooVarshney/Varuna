@@ -28,6 +28,22 @@
         android:layout_centerHorizontal="true" />
 
     <EditText
+        android:id="@+id/username"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/password"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="11dp"
+        android:background="@drawable/shape"
+        android:ems="10"
+        android:hint="Email ID"
+        android:inputType="textEmailAddress"
+        android:paddingBottom="5dp"
+        android:paddingTop="5dp"
+        android:textAlignment="center"
+        android:textColorHint="#252120" />
+
+    <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:inputType="textPassword"
@@ -42,22 +58,6 @@
         android:layout_centerVertical="true"
         android:layout_alignLeft="@+id/username"
         android:layout_alignStart="@+id/username" />
-
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="textEmailAddress"
-        android:ems="10"
-        android:id="@+id/username"
-        android:textAlignment="center"
-        android:paddingTop="5dp"
-        android:paddingBottom="5dp"
-        android:background="@drawable/shape"
-        android:hint="Email ID"
-        android:textColorHint="#252120"
-        android:layout_above="@+id/password"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="11dp" />
 
     <ImageView
         app:srcCompat="@mipmap/kampaani"

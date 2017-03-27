@@ -23,20 +23,14 @@ public class MainActivity extends AppCompatActivity{
 
     private FirebaseAuth mFirebaseAuth;
     private FirebaseUser mFirebaseUser;
-    DatabaseHelper myDb;
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        //Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        //setSupportActionBar(toolbar);
-        myDb=new DatabaseHelper(this);
         // Initialize Firebase Auth and Database Reference
         mFirebaseAuth = FirebaseAuth.getInstance();
         mFirebaseUser = mFirebaseAuth.getCurrentUser();
-        AddData("Rice","0.43");
-
         Button water_plants=(Button)findViewById(R.id.button1);
         Button add_plant=(Button)findViewById(R.id.button2);
         Button details=(Button)findViewById(R.id.button3);
@@ -97,36 +91,6 @@ public class MainActivity extends AppCompatActivity{
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
         startActivity(intent);
     }
-
-    //@Override
-   // public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-      //  getMenuInflater().inflate(R.menu.main, menu);
-        //return true;
-    //}
-
-    //@Override
-    //public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-      //  int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-//        if (id == R.id.action_settings) {
-  //          mFirebaseAuth.signOut();
-    //        loadLogInView();
-      //  }
-
-        //return super.onOptionsItemSelected(item);
-   // }
-
-    void AddData(String a,String b)
-    {
-        myDb.insertData(a,b);
-    }
-
-
 
     }
 

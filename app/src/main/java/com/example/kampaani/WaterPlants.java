@@ -5,7 +5,6 @@ import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.util.StringBuilderPrinter;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -20,8 +19,6 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
-
-import java.util.Map;
 
 /**
  * Created by jains on 01-03-2017.
@@ -40,8 +37,6 @@ public class WaterPlants extends AppCompatActivity{
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.water_plants);
-        //Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        //setSupportActionBar(toolbar);
 
         // Initialize Firebase Auth and Database Reference
         mFirebaseAuth = FirebaseAuth.getInstance();
@@ -50,9 +45,7 @@ public class WaterPlants extends AppCompatActivity{
 
         final int[] water_txtviewid = {R.id.wat_text1, R.id.wat_text2, R.id.wat_text3, R.id.wat_text4, R.id.wat_text5};
 
-
         final int[] button_id = {R.id.water1, R.id.water2, R.id.water3, R.id.water4, R.id.water5};
-
 
 
         FloatingActionButton fab7 = (FloatingActionButton) findViewById(R.id.waterlog);
@@ -80,29 +73,20 @@ public class WaterPlants extends AppCompatActivity{
             loadLogInView();
         } else {
             mUserId = mFirebaseUser.getUid();
-            //a = (TextView) findViewById(R.id.val);
             mDatabase.addListenerForSingleValueEvent(new ValueEventListener() {
                 @Override
                 public void onDataChange(DataSnapshot dataSnapshot) {
-
                     int k = 0;
                     for(DataSnapshot d : dataSnapshot.child("Users").child(mUserId).getChildren())
                     {
                         Plant c=d.getValue(Plant.class);
                         a=(TextView) findViewById(water_txtviewid[k]);
                         but = (Button) findViewById(button_id[k]);
-                        //a.setText(a.getText().toString().concat("\n").concat(c.getName()).concat("\n").concat(c.getNumber()));
                         a.setText(c.getName().concat("  ").concat(c.getNumber()));
                         but.setVisibility(View.VISIBLE);
                         k++;
                     }
-
-
-
-                    //Map<String, String> map = dataSnapshot.getValue(Map.class);
-                    //String name = map.get("");
                 }
-
 
                 @Override
                 public void onCancelled(DatabaseError databaseError) {
@@ -111,6 +95,8 @@ public class WaterPlants extends AppCompatActivity{
             });
 
         }
+
+
 
     }
 
@@ -121,7 +107,6 @@ public class WaterPlants extends AppCompatActivity{
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
         startActivity(intent);
     }
-
 
 }
 

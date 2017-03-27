@@ -39,7 +39,6 @@ public class Addplant extends AppCompatActivity {
         buttonSave = (Button) findViewById(R.id.buttonSave);
         editTextName = (EditText) findViewById(R.id.editTextName);
         editTextNumber = (EditText) findViewById(R.id.editTextNumber);
-        a = (TextView) findViewById(R.id.textViewPlants);
         Firebase.setAndroidContext(this);
         mFirebaseAuth= FirebaseAuth.getInstance();
         mFirebaseUser= mFirebaseAuth.getCurrentUser();
@@ -73,7 +72,8 @@ public class Addplant extends AppCompatActivity {
             public void onClick(View v) {
                 //Creating firebase object
                 Firebase ref = new Firebase("https://kampaani-3294b.firebaseio.com/");
-
+                editTextName.setText("");
+                editTextNumber.setText("");
                 //Getting values to store
                 String name = editTextName.getText().toString().trim();
                 String address = editTextNumber.getText().toString().trim();
