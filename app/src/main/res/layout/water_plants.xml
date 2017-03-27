@@ -108,32 +108,34 @@
         android:id="@+id/water1"
         android:layout_width="80dp"
         android:layout_height="40dp"
-        android:layout_alignTop="@+id/wat_text1"
+        android:text="WATER"
+        android:visibility="invisible"
+        android:layout_alignBaseline="@+id/wat_text1"
+        android:layout_alignBottom="@+id/wat_text1"
         android:layout_toLeftOf="@+id/waterlog"
-        android:layout_toStartOf="@+id/waterlog"
-        android:text="WATER ME"
-        android:visibility="invisible" />
+        android:layout_toStartOf="@+id/waterlog" />
 
     <Button
         android:id="@+id/water2"
         android:layout_width="80dp"
         android:layout_height="40dp"
-        android:layout_above="@+id/water3"
+        android:text="WATER"
+        android:visibility="invisible"
+        android:layout_below="@+id/water1"
         android:layout_alignLeft="@+id/water1"
         android:layout_alignStart="@+id/water1"
-        android:layout_marginBottom="14dp"
-        android:text="WATER"
-        android:visibility="invisible" />
+        android:layout_marginTop="18dp" />
 
     <Button
         android:id="@+id/water3"
         android:layout_width="80dp"
         android:layout_height="40dp"
+        android:text="WATER"
+        android:visibility="invisible"
+        android:layout_below="@+id/water1"
         android:layout_alignLeft="@+id/water2"
         android:layout_alignStart="@+id/water2"
-        android:layout_centerVertical="true"
-        android:text="WATER"
-        android:visibility="invisible" />
+        android:layout_marginTop="94dp" />
 
     <Button
         android:id="@+id/water4"

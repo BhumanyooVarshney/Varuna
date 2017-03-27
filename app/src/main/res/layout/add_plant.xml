@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -15,41 +15,46 @@
     <TextView
         android:text="Plant Number"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:id="@+id/textView3" />
 
     <EditText
         android:id="@+id/editTextNumber"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView3"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
 
     <TextView
         android:text="Plant Name"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/editTextNumber"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="12dp" />
 
     <EditText
         android:id="@+id/editTextName"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/editTextNumber"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="50dp" />
 
     <Button
         android:id="@+id/buttonSave"
         android:text="Create"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:layout_marginTop="182dp"
+        android:layout_below="@+id/editTextNumber"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
-
-    <TextView
-        android:text="Plants"
-        android:textStyle="bold"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
-
-    <TextView
-        android:id="@+id/textViewPlants"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
 
     <android.support.design.widget.FloatingActionButton
         android:layout_width="wrap_content"
@@ -57,16 +62,26 @@
         android:clickable="true"
         app:fabSize="mini"
         app:backgroundTint="@color/fab"
-        app:srcCompat="@drawable/home1"
-        android:id="@+id/addhome" />
+        android:src="@drawable/power"
+        android:layout_marginRight="14dp"
+        android:layout_marginEnd="14dp"
+        android:id="@+id/addlog"
+        android:layout_alignTop="@+id/addhome"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
 
     <android.support.design.widget.FloatingActionButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:clickable="true"
         app:fabSize="mini"
+        android:src="@drawable/home1"
         app:backgroundTint="@color/fab"
-        android:layout_weight="0.74"
-        app:srcCompat="@drawable/power"
-        android:id="@+id/addlog"/>
-</LinearLayout>
+        android:layout_marginRight="16dp"
+        android:layout_marginEnd="16dp"
+        android:id="@+id/addhome"
+        android:layout_marginBottom="20dp"
+        android:layout_alignParentBottom="true"
+        />
+
+</RelativeLayout>
