@@ -72,8 +72,6 @@ public class Addplant extends AppCompatActivity {
             public void onClick(View v) {
                 //Creating firebase object
                 Firebase ref = new Firebase("https://kampaani-3294b.firebaseio.com/");
-                editTextName.setText("");
-                editTextNumber.setText("");
                 //Getting values to store
                 String name = editTextName.getText().toString().trim();
                 String address = editTextNumber.getText().toString().trim();
@@ -87,6 +85,9 @@ public class Addplant extends AppCompatActivity {
 
                 //Storing values to firebase
                 mDatabase.child("Users").child(mUserID).push().setValue(plant);
+                editTextName.setText("");
+                editTextNumber.setText("");
+
             }
         });
 
