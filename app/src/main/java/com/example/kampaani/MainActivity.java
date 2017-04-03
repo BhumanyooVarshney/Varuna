@@ -10,6 +10,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.google.firebase.auth.FirebaseAuth;
@@ -31,15 +32,13 @@ public class MainActivity extends AppCompatActivity{
         // Initialize Firebase Auth and Database Reference
         mFirebaseAuth = FirebaseAuth.getInstance();
         mFirebaseUser = mFirebaseAuth.getCurrentUser();
-        Button water_plants=(Button)findViewById(R.id.button1);
-        Button add_plant=(Button)findViewById(R.id.button2);
-        Button details=(Button)findViewById(R.id.button3);
-        Button about=(Button)findViewById(R.id.button4);
+        RelativeLayout water_plants=(RelativeLayout) findViewById(R.id.button1);
+        RelativeLayout add_plant=(RelativeLayout) findViewById(R.id.button2);
+        RelativeLayout details=(RelativeLayout) findViewById(R.id.button3);
+        RelativeLayout about=(RelativeLayout) findViewById(R.id.button4);
 
         TextView txtviw = (TextView)findViewById(R.id.textView4);
-        Typeface custom_font = Typeface.createFromAsset(getAssets(),  "fonts/ama.ttf");
 
-        txtviw.setTypeface(custom_font);
 
         water_plants.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -73,7 +72,7 @@ public class MainActivity extends AppCompatActivity{
             }
         });
 
-        FloatingActionButton fab1 = (FloatingActionButton) findViewById(R.id.floatingActionButton1);
+        FloatingActionButton fab1 = (FloatingActionButton) findViewById(R.id.floatingactionbutton1);
         fab1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -93,7 +92,6 @@ public class MainActivity extends AppCompatActivity{
     }
 
     }
-
 
 
 
