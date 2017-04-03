@@ -30,6 +30,8 @@ public class Addplant extends AppCompatActivity {
     private FirebaseUser mFirebaseUser;
     private DatabaseReference mDatabase;
     private String mUserID;
+    private Button buttonDelete;
+    private  EditText editTextDelete;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,6 +46,8 @@ public class Addplant extends AppCompatActivity {
         mFirebaseUser= mFirebaseAuth.getCurrentUser();
         mDatabase = FirebaseDatabase.getInstance().getReference();
         mUserID=mFirebaseUser.getUid();
+        buttonDelete=(Button) findViewById(R.id.deleteBut);
+        editTextDelete=(EditText) findViewById(R.id.deletePlantName);
 
         FloatingActionButton fab5 = (FloatingActionButton) findViewById(R.id.addlog);
         fab5.setOnClickListener(new View.OnClickListener() {
@@ -87,6 +91,48 @@ public class Addplant extends AppCompatActivity {
                 mDatabase.child("Users").child(mUserID).push().setValue(plant);
                 editTextName.setText("");
                 editTextNumber.setText("");
+
+            }
+        });
+
+        buttonDelete.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                mUserID=mFirebaseUser.getUid();
+                mDatabase.addListenerForSingleValueEvent(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(DataSnapshot dataSnapshot) {
+                        String user_input=editTextDelete.getText().toString();
+                        editTextDelete.setText("");
+                        boolean flag=true;
+                        for(DataSnapshot d: dataSnapshot.child("Users").child(mUserID).getChildren())
+                        {
+                            Plant c = d.getValue(Plant.class);
+                            String a = c.getName();
+                            int b = Integer.parseInt(c.getNumber());
+                            if(flag == false)
+                            {
+                                Plant updatedPlant=new Plant();
+                                updatedPlant.setName(a);
+                                updatedPlant.setNumber(Integer.toString(b-1));
+                                String newKey=d.getKey();
+                                mDatabase.child("Users").child(mUserID).child(newKey).setValue(updatedPlant);
+                            }
+                            if(a.equals(user_input))
+                            {
+                                d.getRef().removeValue();
+                                flag = false;
+                            }
+
+
+                        }
+                    }
+
+                    @Override
+                    public void onCancelled(DatabaseError databaseError) {
+
+                    }
+                });
 
             }
         });
